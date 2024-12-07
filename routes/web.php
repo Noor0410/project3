@@ -5,6 +5,7 @@ use App\Http\Middleware\ValidAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BoldWareController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 
 
 Route::get('/', function () {
@@ -35,5 +36,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('admin', AdminController::class);
 // ->middleware(ValidAdmin::class);
+Route::resource('categories', CategoryController::class);
 
 require __DIR__ . '/auth.php';
