@@ -33,7 +33,18 @@
         <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('frontend/pictures/logo.png')}}" alt="Brand logo " style="width: 120px;"></a>
 
         <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search...">
+            <form action="{{ route('search') }}" method="GET" class="d-flex mb-2">
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="product-search" 
+                    name="query" 
+                    placeholder="Search for products..."
+                    autocomplete="off">
+            </form>
+            <div id="product-results" class="row mt-3" >
+                <!-- Results will load dynamically here -->
+            </div>
             <button class="search-button">Search</button>
         </div>
             

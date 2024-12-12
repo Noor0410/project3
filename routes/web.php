@@ -38,4 +38,6 @@ Route::resource('admin', AdminController::class);
 // ->middleware(ValidAdmin::class);
 Route::resource('categories', CategoryController::class);
 
+Route::get('/search', [AdminController::class, 'search'])->name('search');
+
 require __DIR__ . '/auth.php';
